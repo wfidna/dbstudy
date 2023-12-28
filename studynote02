@@ -1,0 +1,18 @@
+candidate key
+  - selected super keys comprised with minimal columns
+  - features: uniqueness and minimalness
+
+primary key
+  - selected keys by dba among candidate keys
+  - therefore features: uniqueness and not null
+
+foreign key
+  - key for relationship
+
+parent - children relationship:
+table where parent key locate is call "parent table"
+table where child key locate is call "child table"
+
+when child key does not exist in parent keys the following error message issued:
+"PARENT KEY NOT FOUND"
+it means it breaks the integrity (referential integrity)

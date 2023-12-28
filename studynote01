@@ -1,0 +1,49 @@
+/*
+데이터 타입
+1. NUMBER(p, s): 정밀도가 p, 스케일이 s
+    1) 정밀도 p: 전체 유효 숫자
+    2) 스케일 s: 소수부의 유효 숫자
+    3) 스케일만 생략하면 정수로 표시하는 숫자
+    4) 정밀도와 스케일을 생략하면 정수, 실수 모두 표시할 수 있는
+2. CHAR(size): 글자수가 최대 size인 고정 문자
+    1) 고정 문자: 글자수 변동이 적은 문자
+    2) 최대 size: 2000 byte
+3. VARCHAR2(size): 글자수가 최대 size인 가변 문자
+    1) 가변 문자: 글자수의 변동이 큰 문자
+    2) 최대 size: 4000 byte
+4. CLOB: VARCHAR2(size)로 처리할 수 없는 큰 문자
+// BLOB과 대비: 아마 binary의 b를 char의 c로 치환한듯
+5. DATE: 날짜 시간 (년월일시분초) 표현
+6. TIMESTAMP: 좀더정밀
+
+
+데이터베이스에다 파일 자체를 저장하는 경우:
+    이미지 같은 파일
+
+보통 경로만 저장을 한다~
+그래서 경로를 찾아서 파일/이미지 따위를 불러오는 것
+
+
+
+제약조건
+1. NOT NULL: 필수 입력
+2. UNIQUE: 유니크
+3. PRIMARY_KEY: 기본키: 식별자
+    - 중복 불가
+    - 필수 입력
+4. FOREIGN_KEY: 왜래키
+5. CHECK: 작성한 조건으로 값 제한
+*/
+
+-- 블로그 구현 테이블 연습
+-- 원래 테이블 정의서를 보고 만든다
+CREATE TABLE BLOG_T (
+    BLOG_NO  NUMBER NOT NULL PRIMARY KEY,
+    TITLE    VARCHAR2(100 BYTE) NOT NULL,
+    EDITOR   VARCHAR2(100 BYTE) NOT NULL,
+    CONTENTS CLOB               NULL,
+    CREATED  DATE               NOT NULL
+);
+
+-- 블로그 테이블 삭제
+DROP TABLE BLOG_T;
